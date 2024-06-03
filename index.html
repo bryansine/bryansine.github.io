@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Events</title>
-    <link rel="icon" href="{% static 'images/favicon1.ico' %}" type="image/x-icon">
+    <link rel="icon" href="images/favicon1.ico" type="image/x-icon">
     <style>
         body {
             background: linear-gradient(45deg, #333, #555, #777);
@@ -193,7 +193,8 @@
             bottom: 0;
             width: 100%;
         }
-           /* Intro section styles */
+
+          /* Intro section styles */
            #intro {
             text-align: center;
             margin-top: 100px;
@@ -231,7 +232,7 @@
         .btn-explore:hover {
             background-color: #e5533c;
         }
-         /* About section styles */
+         /* About section */
          .about {
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
@@ -272,19 +273,54 @@
         .about nav#ui ul li a:hover {
             color: #e5533c;
         }
+
+               /* Features Section */
+        .features {
+            padding: 50px 20px;
+            display:flex;
+            flex-direction: row;
+            gap: 30px;
+            justify-content:space-evenly;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
     <section id="intro">
         <div class="cover-image">
-            <img src="{% static 'images/coverimage.webp' %}" alt="Astro Events Cover Image"> <!-- ill add a quality cover image here -->
+            <img src="images/astro.jpeg " alt="Astro Events Cover Image">
         </div>
         <div class="intro-text">
             <h1>Astro Events</h1>
             <p>Discover amazing events, experience unforgettable moments, and enjoy everything we have to offer.</p>
-            <a href="{% url 'login' %}" class="btn-explore">Explore Astro Events</a> <!-- ill add the link here once i've deployed the project-->
+            <a href="{% url 'login' %}" class="btn-explore">Explore Astro Events</a>
         </div>
     </section>
+    <br> <br> <br> <br> <br> <br> <br>
     
     <div class="header">
         <div class="brand-container">
@@ -299,31 +335,25 @@
             <a href="{% url 'about' %}">About us</a>
         </div>
     </div>
-    <div class="content">
-        {% comment %} <section class="hero">
-            <div class="brand">Astro Events</div>
-            <h1>Welcome to Astro Events</h1>
-            <p>Discover amazing events, experience unforgettable moments, and enjoy everything we have to offer.</p>
-            <a href="{% url 'signup' %}" class="btn">Get Started</a>
-        </section> {% endcomment %}
-
-        <section class="features">
-            <div class="feature">
-                <img src="{% static 'images/sign_petition.png' %}" alt="Sign Petition Image">
-                <h3>Sign Petition for Event Culture</h3>
-                <p>This feature enables users to sign a petition advocating for the freedom and promotion of event culture. By signing the petition, users contribute to the support and growth of diverse cultural events, fostering community engagement and celebration.</p>
-            </div>
-            <div class="feature">
-                <img src="{% static 'images/crud_operations.png' %}" alt="Event Organizers CRUD Operations Image">
-                <h3>Event Organizers CRUD Operations</h3>
-                <p>Event organizers can perform CRUD (Create, Read, Update, Delete) operations seamlessly through the app. This includes creating new events, updating event details, managing bookings, and deleting outdated events, providing organizers with complete control over their events.</p>
-            </div>
-            <div class="feature">
-                <img src="{% static 'images/view_book_events.png' %}" alt="View and Book Events Image">
-                <h3>View and Book Events</h3>
-                <p>Users (attendees) can view detailed information about events, including event descriptions, dates, locations, and available tickets. They can easily book their desired events directly through the app, ensuring a smooth and convenient booking experience.</p>
-            </div>
-        </section>
+    
+    <section class="features">
+        <div class="feature">
+            <img src="images/signup.png" alt="Sign Petition Image">
+            <h3>Sign Petition for Event Culture</h3>
+            <p>This feature enables users to sign a petition advocating for the freedom and promotion of event culture. By signing the petition, users contribute to the support and growth of diverse cultural events, fostering community engagement and celebration.</p>
+        </div>
+        <div class="feature">
+            <img src="images/organizer.png" alt="Event Organizers CRUD Operations Image">
+            <h3>Event Organizers CRUD Operations</h3>
+            <p>Event organizers can perform CRUD (Create, Read, Update, Delete) operations seamlessly through the app. This includes creating new events, updating event details, managing bookings, and deleting outdated events, providing organizers with complete control over their events.</p>
+        </div>
+        <div class="feature">
+            <img src="images/attendee.png" alt="View and Book Events Image">
+            <h3>View and Book Events</h3>
+            <p>Users (attendees) can view detailed information about events, including event descriptions, dates, locations, and available tickets. They can easily book their desired events directly through the app, ensuring a smooth and convenient booking experience.</p>
+        </div>
+    </section>
+    
          <!-- About Section -->
          <section class="about">
             <h2>Mission</h2>
@@ -365,7 +395,7 @@
             </div>
             <div class="events-grid">
                 <div class="event-card">
-                    <a href="{% url 'signup' %}"><img src="{% static 'images/sol fest.webp' %}" alt="Event" loading="lazy" height="150px" width="250px"></a>
+                    <img src="images/sol fest.webp" alt="Event" loading="lazy" height="150px" width="250px"></a>
                     <h3>Sol Festival</h3>
                     <p>June 20, 2024</p>
                     <p>Time: 10:00 AM - 9:00 PM</p>
@@ -374,7 +404,7 @@
                     <a href="{% url 'signup' %}" class="btn btn-secondary">View More</a>
                 </div>
                 <div class="event-card">
-                    <a href="{% url 'signup' %}"><img src="{% static 'images/temple.jpeg' %}" alt="Event" loading="lazy" height="150px" width="250px"></a>
+                    <img src="images/temple.jpeg" alt="Event" loading="lazy" height="150px" width="250px"></a>
                     <h3>Temple of Youth</h3>
                     <p>July 2, 2024</p>
                     <p>Time: 2:00 PM - 5:00 PM</p>
@@ -383,7 +413,7 @@
                     <a href="{% url 'signup' %}" class="btn btn-secondary">View More</a>
                 </div>
                 <div class="event-card">
-                    <a href="{% url 'signup' %}"><img src="{% static 'images/art.png' %}" alt="Event" loading="lazy" height="150px" width="250px"></a>
+                    <img src="images/art.png" alt="Event" loading="lazy" height="150px" width="250px"></a>
                     <h3>Art Festival</h3>
                     <p>August 15, 2024</p>
                     <p>Time: 9:00 AM - 6:00 PM</p>
@@ -395,7 +425,7 @@
         </section>
     </div>
     <footer>
-        &copy; 2024 Astro Events. All rights reserved.
+        &copy; 2024 Astro Events. All rights reserved. 
     </footer>
 </body>
 </html>

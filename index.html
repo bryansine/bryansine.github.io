@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Events</title>
-    <link rel="icon" href="images/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         body {
             background: linear-gradient(45deg, #333, #555, #777);
@@ -202,8 +202,8 @@
 
         .cover-image img {
             width: 100%;
-            max-width: 800px;
-            height: auto;
+            max-width: 2000px;
+            height: 600px;;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
@@ -306,13 +306,23 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        /*video styles */
 
+        .video-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <section id="intro">
         <div class="cover-image">
-            <img src="images/astro.jpeg " alt="Astro Events Cover Image">
+            <img src="images/astro.png " alt="Astro Events Cover Image" >
         </div>
         <div class="intro-text">
             <h1>Astro Events</h1>
@@ -380,8 +390,8 @@
             </p>
             <nav id="ui">
                 <ul>
-                    <li>Check out my <a href="https://www.instagram.com/">Instagram</a> page</li>
-                    <li>Check out my <a href="https://x.com/Walterrayo1738">Twitter</a> page</li>
+                    <li>Check out my <a href="https://github.com/bryansine/">github</a> page</li>
+                    <li>Check out my <a href="https://x.com/Walterrayo1738/">Twitter</a> page</li>
                     <li>Check out my <a href="https://www.linkedin.com/in/bryan-sine-53432b1b1/">LinkedIn</a> page</li><br>
                     <li><a href="https://github.com/bryansine/Astro_events">GitHub Repository - Astro Events</a></li> 
                 </ul>
@@ -389,7 +399,15 @@
         </section>        
 
 
-        <section class="events-highlights">
+        <div class="video-container">
+            <h1>video</h1>
+            <video controls>
+                <source src="images/astro-events.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- <section class="events-highlights">
             <div class="container">
                 <h2>Upcoming Events</h2>
             </div>
@@ -422,7 +440,8 @@
                     <a href="{% url 'signup' %}" class="btn btn-secondary">View More</a>
                 </div>
             </div>
-        </section>
+        </section> -->
+
     </div>
     <footer>
         &copy; 2024 Astro Events. All rights reserved. 
